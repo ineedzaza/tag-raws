@@ -1,0 +1,45 @@
+{if:{argslen}|=|0|then:i'm literally with the logos if then:
+<command:invert,hueshift,fisheye,pinch,rotate,speed,pitch,waves,fliph,flipv,earrape,speednp,audior,audioa,spin,desurate,solitare,bright,dark,cas,tremble,saturate,mirror,times,repeat,virus,amod,dmap> <arguements>}
+{if:{argslen}|>|0|then:{iscript:
+load {iv:{args}} v
+{if:{arg:0}|=|invert|then:invert v}
+{if:{arg:0}|=|hueshift|then:hueshifthsv v {arg:1}}
+{if:{arg:0}|=|fisheye|then:explode v {math:{arg:1}/10}}
+{if:{arg:0}|=|pinch|then:implode v {math:{arg:1}/50}}
+{if:{arg:0}|=|rotate|then:distort v scale_rotate_translate {arg:1}}
+{if:{arg:0}|=|speed|then:speed v {math:{arg:1}/100}
+audiopitch v {math:{arg:1}/100}}
+{if:{arg:0}|=|pitch|then:audiopitch v {math:{arg:1}/100}}
+{if:{arg:0}|=|waves|then:get v width w
+get v height h
+waves v {arg:1}
+cover v w h}
+{if:{arg:0}|=|fliph|then:flop v}
+{if:{arg:0}|=|flipv|then:flip v}
+{if:{arg:0}|=|earrape|then:audiodestroy v}
+{if:{arg:0}|=|speednp|then:speed v {math:{arg:1}/100}}
+{if:{arg:0}|=|audior|then:load {arg:1} a
+audioputreplace v a}
+{if:{arg:0}|=|audioa|then:load {arg:1} a
+audioputmix v a}
+{if:{arg:0}|=|spin|then:spin v false false true}
+{if:{arg:0}|=|desurate|then:grayscale v}
+{if:{arg:0}|=|solitare|then:huecurvergba v all 0 1 0
+darken v 10}
+{if:{arg:0}|=|bright|then:lighten v {math:{arg:1}/7.5}}
+{if:{arg:0}|=|dark|then:darken v {math:{arg:1}/7.5}}
+{if:{arg:0}|=|cas|then:magik v
+audiovibrato v 10}
+{if:{arg:0}|=|tremble|then:audiovibrato v {math:{arg:1}/10}}
+{if:{arg:0}|=|saturate|then:hueshifthsv v 0 {math:{arg:1}/20}}
+{if:{arg:0}|=|mirror|then:mirror{arg:1} v}
+{if:{arg:0}|=|times|then:repeat v {arg:1}}
+{if:{arg:0}|=|virus|then:vaporwave v
+speed v 0.5
+audiotremolo v 10 1}
+{if:{arg:0}|=|amod|then:audiotremolo v {math:{arg:1}*2}}
+tti t 50 0 #ffffff TagVideoEdit
+overlay v t
+render v default tveid{range:10000000|99999999}_{choose:lol|bruh|whar|beebo|ygl}
+}
+{choose:here is ur vid enjoy|cringe...|welp, put me out of my misery plea-|whar}}
