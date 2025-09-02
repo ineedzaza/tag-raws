@@ -1,0 +1,31 @@
+{iscript:
+load {iv} 0
+copy 0 1
+volume 0
+copy 1 2
+huecurvergba 1 all 0 1 0
+copy 2 3
+hueshifthsv 2 180
+invert 2
+haah 2
+copy 3 4
+hueshifthsv 3 180
+invert 3
+haah 3
+huecurvergba 3 all 0 1 0
+copy 4 5
+wiggle 4 down 40 3
+hueshiftrgb 4 0 -255 -255
+copy 5 6
+grayscale 5
+huecurvergba 5 red 1 0 0
+huecurvergba 5 green 1 0 1
+huecurvergba 5 blue 1 1 1
+copy 6 7
+invert 6
+copy 7 8
+invert 7
+hueshifthsv 7 210
+waves 7 10 100
+concatmultiple 0 1 2 3 4 5 6 7
+render 0}
