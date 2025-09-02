@@ -1,0 +1,35 @@
+{iscript:
+load {iv} 0
+copy 0 1
+foreachframe 0 0 0fc hueshifthsv 0x (idx*5)
+copy 1 2
+invertrgba 1 1 1 0
+copy 2 3
+hueshifthsv 2 180
+copy 3 4
+swaprgba 3 bgr
+copy 4 5
+swaprgba 4 bgr
+reverse 4
+copy 5 6
+contrast 5 -1
+swaprgba 5 bgr
+haah 5
+reverse 5
+copy 6 7
+invert 6
+grayscale 6
+reverse 6
+copy 7 8
+zoomblur 7 1.071
+grayscale 7
+huecurvergba 7 red 1 1 0 0
+huecurvergba 7 green 0.65 1 0.65 1
+huecurvergba 7 blue 0 0 1 1
+copy 8 9
+contrast 8 -0.1
+copy 9 10
+rain 9
+wiggle 9 down 40 3
+concatmultiple 0 1 2 3 4 5 6 7 8 9
+render 0}
